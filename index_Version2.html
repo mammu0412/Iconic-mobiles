@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Three Links</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#fff;
+      --accent:#1e88e5;
+      --wa:#25D366;
+      --ig:#C13584;
+      --map:#4285F4;
+      --text:#0f1720;
+      --muted:#64748b;
+      --btn-bg:#0f1720;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#eef3fb);
+      color:var(--text);
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:28px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:24px;
+      box-shadow:0 8px 30px rgba(16,24,40,0.08);
+      width:min(720px,96vw);
+      text-align:center;
+    }
+    h1{ margin:0 0 6px; font-size:1.25rem; }
+    p{ margin:0 0 18px; color:var(--muted); font-size:0.95rem; }
+    .buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-bottom:18px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      transition:transform .08s ease, box-shadow .08s ease;
+      box-shadow:0 4px 12px rgba(16,24,40,0.06);
+    }
+    .btn:active{ transform:translateY(1px) }
+    .btn .emoji{ font-size:1.2rem; line-height:1; }
+    .whatsapp{ background:linear-gradient(90deg,var(--wa),#16a34a); }
+    .instagram{ background:linear-gradient(90deg,var(--ig),#f56040); }
+    .maps{ background:linear-gradient(90deg,var(--map),#0f9d58); }
+
+    .links{
+      text-align:left;
+      margin-top:6px;
+      border-radius:10px;
+      padding:14px;
+      background:linear-gradient(180deg,rgba(15,23,32,0.02),rgba(15,23,32,0.01));
+    }
+    .links h2{
+      margin:0 0 8px;
+      font-size:1rem;
+    }
+    .link-item{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      padding:8px 6px;
+      border-radius:8px;
+    }
+    .link-left{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex:1;
+      min-width:0;
+    }
+    .link-left a{
+      color:var(--accent);
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .copy-btn{
+      background:var(--btn-bg);
+      color:white;
+      border:none;
+      padding:8px 10px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow:0 4px 10px rgba(2,6,23,0.06);
+    }
+    .copy-btn:active{ transform:translateY(1px) }
+    .small{
+      font-size:0.88rem;
+      color:var(--muted);
+    }
+    footer{ margin-top:14px; color:#94a3b8; font-size:0.85rem; text-align:center; }
+
+    @media (max-width:520px){
+      .buttons{ flex-direction:column; gap:10px; }
+      .btn{ width:100%; justify-content:center; }
+      .link-item{ flex-direction:column; align-items:flex-start; gap:8px; }
+      .copy-btn{ width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <h1>Open a link</h1>
+    <p>Tap a button to open the corresponding link (opens in a new tab). You can also copy the raw URL below.</p>
+
+    <div class="buttons" role="navigation" aria-label="Main links">
+      <a class="btn whatsapp" href="https://wa.me/919947890409" target="_blank" rel="noopener noreferrer" aria-label="Open WhatsApp chat">
+        <span class="emoji">💬</span>
+        WhatsApp
+      </a>
+
+      <a class="btn instagram" href="https://instagram.com/_iconic.mobiles?exln=cGMybnM4bDRucnVs" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram profile">
+        <span class="emoji">📷</span>
+        Instagram
+      </a>
+
+      <a class="btn maps" href="https://maps.app.goo.gl/JZv6wXwsUJFAd4o47?g_st=ac" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">
+        <span class="emoji">📍</span>
+        Location
+      </a>
+    </div>
+
+    <div class="links" aria-label="Raw links">
+      <h2 class="small">Raw links (click to open or use Copy)</h2>
+
+      <div class="link-item" aria-hidden="false">
+        <div class="link-left">
+          <strong class="small" style="width:90px">WhatsApp</strong>
+          <a href="https://wa.me/919947890409" target="_blank" rel="noopener noreferrer">https://wa.me/919947890409</a>
+        </div>
+        <button class="copy-btn" data-url="https://wa.me/919947890409" aria-label="Copy WhatsApp link">Copy</button>
+      </div>
+
+      <div class="link-item" style="margin-top:6px;">
+        <div class="link-left">
+          <strong class="small" style="width:90px">Instagram</strong>
+          <a href="https://instagram.com/_iconic.mobiles?exln=cGMybnM4bDRucnVs" target="_blank" rel="noopener noreferrer">https://instagram.com/_iconic.mobiles?exln=cGMybnM4bDRucnVs</a>
+        </div>
+        <button class="copy-btn" data-url="https://instagram.com/_iconic.mobiles?exln=cGMybnM4bDRucnVs" aria-label="Copy Instagram link">Copy</button>
+      </div>
+
+      <div class="link-item" style="margin-top:6px;">
+        <div class="link-left">
+          <strong class="small" style="width:90px">Maps</strong>
+          <a href="https://maps.app.goo.gl/JZv6wXwsUJFAd4o47?g_st=ac" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/JZv6wXwsUJFAd4o47?g_st=ac</a>
+        </div>
+        <button class="copy-btn" data-url="https://maps.app.goo.gl/JZv6wXwsUJFAd4o47?g_st=ac" aria-label="Copy Maps link">Copy</button>
+      </div>
+    </div>
+
+    <footer>Links open in a new tab for safety. Copy not supported on some older browsers.</footer>
+  </main>
+
+  <script>
+    // Copy buttons behavior with temporary feedback
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const url = btn.dataset.url;
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            // Fallback
+            const ta = document.createElement('textarea');
+            ta.value = url;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            ta.remove();
+          }
+          const prev = btn.textContent;
+          btn.textContent = 'Copied!';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.textContent = prev;
+            btn.disabled = false;
+          }, 1500);
+        } catch (e) {
+          btn.textContent = 'Failed';
+          setTimeout(() => btn.textContent = 'Copy', 1500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
